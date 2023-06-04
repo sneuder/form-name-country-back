@@ -9,6 +9,7 @@ type User {
 
 type CountryOutput {
   name: String
+  country: String
 }
 
 type Query {
