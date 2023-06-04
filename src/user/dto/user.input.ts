@@ -4,4 +4,7 @@ import { Field, InputType } from '@nestjs/graphql';
 export class UserInput {
   @Field(() => String, { nullable: true })
   name: string;
+
+  @Field(() => String, { nullable: true })
+  country: string;
 }

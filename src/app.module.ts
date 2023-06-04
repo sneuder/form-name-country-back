@@ -2,7 +2,7 @@ import { join } from 'path';
 
 import { Module } from '@nestjs/common';
 import { UserModule } from './user/user.module';
-import { CountryModule } from './country/countries.module';
+import { CountryModule } from './country/country.module';
 
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
@@ -19,8 +19,8 @@ dotenv.config();
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
     MongooseModule.forRoot(process.env.DB_HOST),
-    CountryModule,
     UserModule,
+    CountryModule,
   ],
   controllers: [],
   providers: [],

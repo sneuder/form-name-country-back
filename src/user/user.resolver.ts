@@ -20,6 +20,14 @@ export class UserResolver {
     return this.userService.getOne(UserId);
   }
 
+  @Mutation(() => User, { name: 'createUser' })
+  createOneUser(
+    @Args('userToCreate', { type: () => UserInput })
+    userToCreate: UserInput,
+  ) {
+    return this.userService.createOne(userToCreate);
+  }
+
   @Mutation(() => User, { name: 'updateUser' })
   updateOneUser(
     @Args('userId', { type: () => String }) UserId: string,

@@ -8,6 +8,10 @@ export class User {
   @Prop({ required: true, type: String })
   @Field(() => String, { nullable: false })
   name: string;
+
+  @Prop({ required: true, type: String })
+  @Field(() => String, { nullable: false })
+  country: string;
 }
 
 export type UserDocument = HydratedDocument<User>;
